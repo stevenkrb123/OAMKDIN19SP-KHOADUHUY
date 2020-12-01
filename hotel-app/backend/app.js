@@ -10,7 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
 var bookRouter = require('./routes/book');
 var roomRouter = require('./routes/room');
-
+var historyRouter = require('./routes/history')
 app.use(cors());  
 app.use(helmet());
 
@@ -33,6 +33,7 @@ app.use('/', indexRouter);
 app.use('/user', usersRouter);
 app.use('/room', roomRouter);
 app.use('/book', bookRouter);
+app.use('/history', historyRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
